@@ -1,0 +1,10 @@
+ <h1>Bone-Thugs-n-Harmony</h1>
+
+  <% @bonethugs.each do |bone| %>
+  <h2><%= bone.thugname %></h2>
+  <br>
+  <%= link_to image_tag(bone.imagelink, :width => 300), bone.id %>
+  <%= link_to "Edit-a-Bone", edit_bonethug_url(bone.id) %> |
+  <%= link_to "Kill-a-Bone", bonethug_url(bone.id), :method => "delete", confirm: "Sure you want to kill this Bone?" %>
+  <br>
+  <% end %>
